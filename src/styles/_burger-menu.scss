@@ -1,0 +1,102 @@
+.burger-menu{
+  @include size(3.375rem, 100%); //54px
+  background-color: $white;
+  border-right: $border-grey;
+  position: absolute;
+  z-index: 100;
+  &__icon{
+    @include size(24px, 19px);
+    display: inline-block;
+    position: relative;
+    margin: 15px;
+    cursor: pointer;
+  }
+  &__icon-dash{
+    @include size(24px, 2px);
+    background: #000;
+    display: inline-block;
+    position: absolute;
+    transition: 0.5s ease;
+  }
+  &__icon-dash:nth-child(2n){
+    @include size(20px, 2px);
+  }
+  &__icon-dash:nth-child(2){
+    top: 6px;
+  }
+  &__icon-dash:nth-child(3){
+    top: 12px;
+  }
+  &__icon-dash:nth-child(4){
+    top: 18px;
+  }
+  .burger-menu__input:checked + .burger-menu__icon .burger-menu__icon-dash:nth-child(2n){
+    opacity: 0;
+  }
+  .burger-menu__input:checked + .burger-menu__icon .burger-menu__icon-dash:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burger-menu__input:checked + .burger-menu__icon .burger-menu__icon-dash:nth-child(3){
+    transform: translateY(-4px) rotate(-45deg);
+  }
+  .burger-menu__input:checked ~ .burger-menu__menu{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .burger-menu__input:checked ~ .burger-menu__menu .burger-menu__backdrop{
+    display: block;
+  }
+
+  &__menu{
+    @include size(calc(1366px - 3.375rem), 100%);
+    transform: translateX(-2000px);
+    opacity: 0;
+    top: 0;
+    left: calc(100% + 1px);
+    position: absolute;
+    transition: opacity 1s ease;
+  }
+  &__menu-container{
+    @include size(525px, 100%);
+    background-color: $white;
+    padding: 13.125rem 0 0 10.8125rem;
+  }
+  &__backdrop{
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    @include size(calc(841px - 3.375rem), 100%);
+    right: 0;
+    bottom: 0;
+    display: none;
+  }
+  &__menu-item{
+    padding: 10px;
+    position: relative;
+    &:hover:before{
+      content: '';
+      background: $sun-light;
+      @include size(32px, 2px);
+      position: absolute;
+      top: 10px;
+      left: -40px;
+    }
+  }
+}
+
+.burger-menu_baby-side{
+  background: $grapefruit-light;
+  border-right: 0.5px solid $darkgrey-light;
+}
+.burger-menu__icon-dash_white{
+  background: $white;
+}
+.burger-menu__menu_baby-side{
+  color: $white;
+  left: calc(100% + 0.5px);
+  .burger-menu__item:hover:before{
+    background: $white;
+  }
+}
+.burger-menu__container_baby-side{
+  background: $grapefruit-light;
+}

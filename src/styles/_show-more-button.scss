@@ -1,0 +1,22 @@
+.show-more-button{
+  padding: 40px 0;
+  &__container{
+    grid-column: 6/8;
+    display: flex;
+    align-items: center;
+    transition: color 0.5s ease;
+    &:hover{
+      color: $sun-light;
+    }
+    &:hover  .show-more-button__icon{
+      transform-origin: 50% 50%;
+      transform: scaleX(-1) rotate(-120deg) translate(-8px, 5px);
+    }
+  }
+  &__icon{
+    transform: scaleX(-1);
+    padding-left: 10px;
+    transition: transform 0.5s ease;
+  }
+
+}

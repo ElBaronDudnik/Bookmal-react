@@ -1,0 +1,47 @@
+.article-skew{
+  margin-bottom: 3.75rem; //60px
+  &__container{
+    grid-column: 2/11;
+    display: flex;
+    position: relative;
+  }
+  &__tag{
+    order: 1;
+    flex: 1;
+    text-align: right;
+  }
+  &__image{
+    @include size(36.25rem, 16.25rem); //260px-580px
+    border-bottom: 5px solid $grapefruit-light;
+  }
+  &__description{
+    right: 0;
+    top: 30px;
+    width: 28rem;
+  }
+  &__bookmark{
+    position: absolute;
+    right: 20px;
+    bottom: -15px;
+  }
+
+}
+
+.article-skew__container_right{
+  grid-column: 3/12;
+  text-align: right;
+}
+.article-skew__image_right{
+  order: 2;
+}
+.article-skew__description_right{
+  left: 20px;
+}
+.article-skew__tag_right{
+  text-align: left;
+}
+.article-skew__bookmark_right{
+  left: 20px;
+  right: unset;
+}
+

@@ -1,0 +1,16 @@
+.article-fullscreen {
+  position: relative;
+  &__item{
+    grid-column: 2/12;
+  }
+  &__description{
+    width: 40rem; //640px
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+  }
+  &__image{
+    border-bottom: 5px solid $grapefruit-light;
+  }
+}

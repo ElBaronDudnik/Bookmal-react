@@ -1,0 +1,46 @@
+.articles-preview{
+  &__parent{
+    grid-column: 2/12;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item{
+    flex: 1;
+    padding-right: 1.25rem; //20px
+    &:last-child{
+      padding-right: 0;
+    }
+  }
+  &__image{
+    @include size(21.25rem, auto); //340px-200px
+    margin-bottom: 20px;
+  }
+  &__description{
+    position: relative;
+  }
+  &__heading{
+    padding-top: 1.25rem; //20px
+  }
+  &__bookmark{
+    position: absolute;
+    top: -2rem; //32px
+    right: 10%; //50px
+
+  }
+}
+.articles-preview_grey{
+  background-color: $lightgrey-light;
+  padding-top: 70px;
+  padding-bottom: 50px;
+  position: relative;
+  .articles-preview__parent:before{
+    content: 'Teen Review';
+    position: absolute;
+    top: 20px;
+    //left: 7%;
+    text-transform: uppercase;
+    font-family: $main-font;
+    color: $lightgrey-dark;
+  }
+
+}

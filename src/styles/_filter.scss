@@ -1,0 +1,23 @@
+.filter{
+  grid-column: 2/12;
+  margin-bottom: 2.5rem; //40px
+  color: $darkgrey-light;
+  &__option{
+    font-weight: 600;
+    position: relative;
+    padding-left: 20px;
+    &:not(:last-child):after{
+      content: '';
+      background-color: $darkgrey-light;
+      height: 0.5em;
+      width: 2px;
+      position: absolute;
+      top: calc(50% - 0.25em);
+      right: -10px;
+    }
+    &_active{
+      color: $darkgrey-dark;
+    }
+  }
+
+}

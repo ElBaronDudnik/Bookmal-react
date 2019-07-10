@@ -1,0 +1,123 @@
+.header{
+  font-size: 0.875rem; //14px
+  font-family: $main-font;
+  border-bottom: $border-grey;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+  overflow: hidden;
+  &__burger-menu{
+    display: none;
+  }
+  &__logo{
+    grid-column: 1;
+    padding: 0 10px;
+    border-right: $border-grey;
+    line-height: 3.185rem; //51px
+    letter-spacing: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    &-img{
+      max-width: unset;
+    }
+  }
+  &__dropdown{
+    grid-column: 2/3;
+    padding: 0 10px;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 10px;
+    width: 7.2125rem; //117px
+    background-color: $sun-dark;
+    cursor: pointer;
+    &:after{
+      content: '';
+      border: 2px solid $darkgrey-dark;
+      border-left: none;
+      border-top: none;
+      width: 7px;
+      height: 7px;
+      display: inline-block;
+      transform: rotate(45deg) translateY(-2px);
+      transition: 0.5s ease;
+    }
+  }
+  &__dropdown-input:checked + &__dropdown:after{
+    transform: rotate(-135deg);
+  }
+  &__dropdown-input:checked ~ &__dropdown-menu{
+    height: 100px;
+    z-index: 200;
+    opacity: 1;
+    visibility: visible;
+  }
+  &__dropdown-menu{
+    @include size(100%, 1px);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 100%;
+    // z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $white;
+    border-top: $border-grey;
+    border-bottom: $border-grey;
+    border-bottom: $border-grey;
+    transition: height 0.5s ease, opacity  0.5s ease;
+  }
+  &__dropdown-item{
+    text-transform: uppercase;
+    padding: 0 20px;
+    &:after{
+      content: '';
+      border-right: $border-grey;
+      padding: 0 20px;
+    }
+    &_active{
+      color: $sun-light;
+    }
+  }
+  &__dropdown-link{
+    cursor: pointer;
+  }
+  &__menu{
+    grid-column: 9/12;
+    justify-self: center;
+  }
+  &__menu-container{
+    display: flex;
+    align-items: center;
+  }
+  &__menu-item{
+    padding-right: 20px;
+  }
+  &__icons{
+    justify-self: center;
+    border-left: $border-grey;
+    height: 3.185rem; //51px
+    padding-left: 10px;
+    i{
+      line-height: 3.185rem; //51px
+      cursor: pointer;
+    }
+  }
+
+}
+
+.header__dropdown_baby-side{
+  background-color: $grapefruit-light;
+  color: $white;
+  &:after{
+    border-color: $white;
+  }
+  &:hover{
+    background-color: $grapefruit-dark;
+  }
+}
+.header__dropdown-item_baby-side{
+  color: $grapefruit-light;
+}

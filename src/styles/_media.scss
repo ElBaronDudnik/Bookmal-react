@@ -1,0 +1,267 @@
+@media (min-width: 320px) and (max-width: 768px){
+  html{
+    font-size: 12px;
+  }
+  .main-container{
+    width: 100%;
+  }
+  .grid{
+    display: block;
+  }
+  .tag{
+    font-size: 1.167rem;//14px
+  }
+  .info-field{
+    font-size: 1rem;
+  }
+  .header{
+    display: flex;
+    justify-content: space-between;
+    background: $white;
+    flex-wrap: wrap;
+    border-bottom: 0;
+    &__burger-menu{
+      display: block;
+      order: 1;
+      position: relative;
+      border: none
+    }
+    &__logo{
+      order: 2;
+      border: none;
+    }
+    &__dropdown{
+      display: none;
+    }
+    &__dropdown-menu{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      order: 4;
+      width: 100%;
+      position: relative;
+      height: 4.167rem; //50px
+      visibility: visible;
+      opacity: 1;
+      border: none;
+      background-color: inherit;
+      &_baby-side{
+        color: $white;
+      }
+    }
+
+    &__dropdown-item{
+      padding: 0;
+      border-bottom: 2px solid transparent;
+      @include size(100%, 100%);
+      &:hover, &_active{
+        border-bottom-color: $sun-light;
+        color: inherit;
+      }
+      &:after{
+        content: none;
+      }
+    }
+    &__dropdown-link{
+      @include size(100%, 100%);
+      text-align: center;
+      line-height: 3.5;
+      display: inline-block;
+    }
+    &__menu{
+      display: none;
+    }
+    &__icons{
+      order: 3;
+      margin-right: 15px;
+      border: none;
+    }
+    &__icon-bookmark{
+      display: none;
+    }
+    &__icon-search_baby-side{
+      color: white;
+    }
+  }
+
+  .header_baby-side{
+    background-color: $grapefruit-light;
+  }
+  .header__logo-img_baby-side{
+    color: $white;
+  }
+
+  .burger-menu__menu{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: unset;
+    background: $white;
+  }
+  .burger-menu__container{
+    width: unset;
+    height: 100%;
+    padding: 100px 40px;
+  }
+  .burger-menu__icon{
+    z-index: 100;
+  }
+
+  .main__burger-menu{
+    display: none;
+  }
+
+  .main-article{
+    &__inner{
+      height: 20rem; //240px
+      justify-content: flex-end;
+      top: 12px;
+      position: relative;
+      margin: 0 16px;
+    }
+    &__heading{
+      font-size: 2rem; //24px
+    }
+
+  }
+
+  .filter{
+    padding: 0 16px;
+    font-size: 1.167rem; //14px
+    &__label{
+      display: block;
+      margin-bottom: 10px;
+    }
+    &__option:nth-child(3){
+      padding-left: 0;
+    }
+  }
+
+
+  .show-more-button{
+    padding-top: 0;
+    &__container{
+      justify-content: center;
+    }
+  }
+
+  .footer{
+    padding: 20px 16px;
+    font-size: 14px;
+    color: #837F89;
+    &__text{
+      font-weight: 600;
+    }
+    &__text_small{
+      font-size: 12px;
+      font-weight: normal
+    }
+    &__subscribe, &__social, &__copyright{
+      margin: 20px 0;
+    }
+  }
+
+}
+@media (min-width: 320px) and (max-width: 480px){
+  .article-skew, .article-fullscreen{
+    margin: 0;
+    &__container{
+      flex-direction: column;
+    }
+    &__tag{
+      order: unset;
+      text-align: left;
+      padding-left: 16px;
+    }
+    &__description{
+      position: relative;
+      top: -40px;
+      margin: 16px;
+      width: auto;
+      left: unset;
+      text-align: left;
+    }
+  }
+  .description-box__heading:before{
+    content: none;
+  }
+
+
+  .article-fullscreen{
+    &__description{
+      left: unset;
+      transform: unset;
+    }
+  }
+
+  .article-skew_right{
+    .article-skew__image{
+      order: unset;
+    }
+  }
+  .article-skew__bookmark_right{
+    left: unset;
+    right: 20px;
+  }
+  .articles-preview{
+    &__parent{
+      flex-direction: column;
+      margin: 0 16px;
+    }
+    &__image{
+      width: 100%;
+    }
+    &__item{
+      padding-right: 0;
+      padding-bottom: 20px;
+    }
+    &__heading{
+      font-size: 18px;
+    }
+    &__bookmark{
+      top: -35px;
+    }
+  }
+}
+
+
+@media (min-width: 576px) and (max-width: 768px){
+  html{
+    font-size: 14px
+  }
+  article{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+}
+
+@media (min-width: 480px) and (max-width: 576px){
+  html{
+    font-size: 13px;
+  }
+  article{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .article-skew, .article-fullscreen{
+    &__container{
+      flex-wrap: wrap;
+      margin-bottom: 100px;
+    }
+    &__tag{
+      width: 100%;
+      order: unset;
+      text-align: left;
+    }
+    &__description{
+      right: 50%;
+      top: 0;
+      width: 28rem;
+      left: unset;
+      transform: translate(50%, 20%);
+    }
+  }
+}
