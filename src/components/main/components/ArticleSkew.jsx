@@ -1,10 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import ArticlesItem from './ArticlesItem.jsx'
+import SixStories from "../../../img/six_stories.jpg";
 
 const ArticleSkew = () => {
     return(
-        <ArticlesItem type = "articles-skew"/>
+        <article className="article-skew article-skew_left grid">
+            <ArticlesItem type='article-skew'
+                          title = "Огляди"
+                          date = "1 жовтня, 2017"
+                          views = "980"
+                          img = {SixStories}
+                          description = "Шість пригодницьких історій для літнього читання"
+                          descriptionBox = {true}/>
+        </article>
     );
 }
 

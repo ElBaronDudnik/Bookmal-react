@@ -1,23 +1,39 @@
 .main-article{
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/first_screen_bg.jpg) no-repeat top center /cover;
   position: relative;
 
-  &__inner{
-    grid-column: 2/7;
-    margin: 0 auto;
-    height: 450px; //translate to rems
+  &__item{
+    grid-column: 1/13;
+    height: 450px;
+    overflow: hidden;
+  }
+
+  &__tag{
+    position: absolute;
+  }
+
+  &__description{
+    top: 50%;
+    transform: translate(50px, -50%);
+    background: transparent;
+    border: none;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+
+  &__image{
+    filter: brightness(65%);
   }
 
   &__date-and-view{
+    order: 1;
     margin-top: 1.25rem;
     font-size: 12px;
     font-family: $main-font;
+    color: white;
   }
-  &__buttons{
+  &__button{
     margin-top: 1.875rem;
+    order: 2;
   }
 }
 
